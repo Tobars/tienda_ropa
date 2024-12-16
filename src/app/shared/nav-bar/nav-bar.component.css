@@ -1,0 +1,71 @@
+/* Navbar styles to match the footer */
+.navbar {
+  background-color: #343a40; /* Dark background color */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+  color: #f8f9fa; /* Lighter color on hover */
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa; /* Lighter color on hover */
+}
+
+/* Dropdown styles */
+.navbar-nav .nav-item.dropdown .dropdown-toggle {
+  color: #ffffff;
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: #343a40; /* Dark background */
+  border-color: #454d55; /* Slightly lighter border for the dropdown */
+}
+
+.navbar-nav .dropdown-item {
+  color: #ffffff;
+}
+
+.navbar-nav .dropdown-item:hover {
+  background-color: #495057; /* Hover effect */
+}
+
+.navbar-toggler-icon {
+  background-color: #ffffff; /* Hamburger icon color */
+}
+
+.navbar-nav .nav-item.disabled {
+  color: #6c757d;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-toggle:focus {
+  outline: none; /* Remove focus outline */
+}
+
+/* Styles for the mobile hamburger menu */
+.navbar-nav.ms-auto {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav.ms-auto .nav-item {
+  margin-left: 15px;
+}
+
+.navbar-nav.ms-auto .nav-item a {
+  padding-right: 20px;
+  padding-left: 20px;
+}

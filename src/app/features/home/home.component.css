@@ -1,0 +1,46 @@
+
+/* Fondo de la tarjeta */
+.login-container {
+  background-color: var(--color-bg-light); /* Fondo claro */
+  color: var(--color-text-primary); /* Texto principal */
+  padding: 20px;
+}
+
+/* Fondo de la card */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: var(--color-primary); /* Color de fondo */
+  color: var(--color-text-light); /* Color del texto */
+}
+
+/* Estilo de los botones */
+button {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-info); /* Cian al hacer hover */
+}
+
+/* Enlaces en los formularios */
+a {
+  color: var(--color-info);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para el texto */
+h3 {
+  color: var(--color-text-light);
+}

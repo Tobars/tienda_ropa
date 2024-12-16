@@ -1,0 +1,39 @@
+<app-nav-bar> </app-nav-bar>
+
+
+<div class="container d-flex flex-column justify-content-center align-items-center my-5" style="min-height: 80vh;">
+  <div class="row w-100 align-items-center">
+    <!-- Sección de Texto y Formulario de Contacto -->
+    <div class="col-md-6 text-center">
+      <h1 class="display-4">Contáctanos</h1>
+      <p class="lead text-muted">Nos encantaría saber de ti. Si tienes alguna pregunta, no dudes en ponerte en contacto con nosotros.</p>
+
+      <!-- Formulario de Contacto -->
+      <form class="mt-4">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+      </form>
+    </div>
+
+    <!-- Imagen Representativa -->
+    <div class="col-md-6">
+      <img src="https://www.discover.com/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/background/bg-contact-us-stocksy-675-456.png" alt="Contact Us" class="img-fluid" />
+    </div>
+  </div>
+</div>
+
+
+
+
+<app-footer></app-footer>

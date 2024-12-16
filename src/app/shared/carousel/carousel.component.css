@@ -1,0 +1,14 @@
+/* Contenedor del carousel */
+.carousel-inner {
+  height: 400px;  /* Define la altura fija del carousel */
+  overflow: hidden;  /* Asegura que no se desborden las imágenes */
+}
+
+/* Asegura que las imágenes cubran todo el contenedor sin deformarse */
+.carousel-inner img {
+  object-fit: cover;  /* Asegura que la imagen cubra el contenedor sin deformarse */
+  height: 100%;  /* Ajusta la altura de la imagen al contenedor */
+  width: 100%;   /* Ajusta el ancho de la imagen al contenedor */
+}
+
+/* Opcional: si también quieres que el carousel no se mueva horizontalmente, puedes fijar el ancho */

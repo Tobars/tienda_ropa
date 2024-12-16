@@ -1,0 +1,35 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card shadow-lg" style="max-width: 400px; width: 100%;">
+    <div class="card-header text-center bg-primary text-white">
+      <h3>Registrarse</h3>
+    </div>
+    <div class="card-body">
+      <form>
+        <!-- Mensaje de bienvenida -->
+        <div class="mb-3 text-center">
+          <p> Primera vez que nos vemos? </p>
+        </div>
+
+        <!-- Campo de usuario -->
+        <div class="mb-3">
+          <label for="username" class="form-label">Usuario</label>
+          <input type="text" class="form-control" id="username" placeholder="Ingrese su usuario">
+        </div>
+
+        <!-- Campo de contraseña -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+        </div>
+
+        <!-- Botón de registro -->
+        <button type="submit" class="btn btn-primary w-100">Registrarse</button>
+
+        <!-- Enlaces de recuperación o login -->
+        <div class="d-flex justify-content-between mt-3">
+          <a href="#" class="text-info" [routerLink]="['/login']">Iniciar Sesión</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

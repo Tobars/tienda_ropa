@@ -1,0 +1,102 @@
+/* CSS para la página Contáctenos */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff; /* Fondo blanco */
+  color: #000000; /* Texto en negro */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  min-height: 80vh; /* Alto mínimo para la página */
+}
+
+h1.display-4 {
+  font-size: 4.5rem; /* Tamaño grande para el título */
+  font-weight: bold;
+  color: #333; /* Gris oscuro para el título */
+}
+
+p.lead {
+  font-size: 1.25rem;
+  color: #6c757d; /* Gris claro para el texto de la descripción */
+  margin-top: 10px;
+}
+
+form {
+  width: 100%;
+  max-width: 500px; /* Limita el ancho del formulario */
+  margin-top: 20px;
+}
+
+.form-label {
+  font-size: 1rem;
+  color: #333; /* Color gris oscuro para las etiquetas */
+}
+
+.form-control {
+  background-color: #f8f9fa; /* Fondo gris claro para los campos de entrada */
+  border: 1px solid #dee2e6; /* Borde gris claro */
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #000000; /* Borde negro al enfocar el campo */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+button[type="submit"] {
+  background-color: #000000; /* Botón negro */
+  color: #ffffff; /* Texto blanco */
+  font-size: 1.2rem;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s ease;
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background-color: #343a40; /* Gris oscuro cuando pasa el ratón */
+  transform: translateY(-3px); /* Efecto de elevación */
+}
+
+img.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 20px;
+  object-fit: cover; /* Asegura que la imagen cubra el área del contenedor */
+  object-position: center; /* Centra la imagen */
+}
+
+/* Estilo para la fila y la columna */
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.col-md-6 {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    flex-basis: 100%; /* En pantallas pequeñas, las columnas ocupan el 100% */
+  }
+
+  h1.display-4 {
+    font-size: 3.5rem; /* Reduce el tamaño del texto en pantallas pequeñas */
+  }
+
+  .form-control {
+    font-size: 1.1rem;
+  }
+}

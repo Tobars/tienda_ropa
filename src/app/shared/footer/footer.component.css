@@ -1,0 +1,50 @@
+/* Footer background color and padding */
+.footer {
+  background-color: #343a40; /* Dark background color */
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #f8f9fa; /* Lighter color on hover */
+}
+
+.footer .social-icons i {
+  font-size: 1.5rem; /* Larger social icons */
+}
+
+.footer .social-icons a {
+  font-size: 1.2rem; /* Adjust the size of social media links */
+}
+
+.footer .social-icons a:hover {
+  text-decoration: underline; /* Add underline on hover for better UX */
+}
+
+.footer h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.footer ul {
+  padding-left: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a {
+  font-size: 1rem;
+}
+
+.footer .text-center p {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}

@@ -1,0 +1,73 @@
+/* Estilos generales para las imágenes */
+.card-img-top {
+  object-fit: cover; /* Esto asegura que las imágenes cubran el área sin distorsionarse */
+  height: 200px; /* Ajusta la altura de las imágenes según tu preferencia */
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Esto asegura que el contenido se distribuya de manera uniforme */
+  height: 100%; /* Hace que el cuerpo de la tarjeta ocupe toda la altura */
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.card-text {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Estilo para la tarjeta con hover */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Más sombra */
+}
+
+/* Hacer que la imagen tenga un tamaño fijo */
+.fixed-img {
+  height: 200px; /* Ajusta la altura de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra todo el área de la tarjeta sin deformarse */
+}
+
+/* Asegurar que el card-body tenga una altura mínima para que no se mueva el texto */
+.product-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px; /* Ajusta esto para asegurarte que el contenido se ajuste bien */
+}
+
+/* Estilo para el contenedor que tiene el precio y el botón */
+.product-card .card-body .d-flex {
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Ajuste en el tamaño del botón */
+.product-card .card-body .btn-sm {
+  font-size: 0.875rem; /* Tamaño pequeño para el botón */
+  background-color: #4CAF50; /* Verde estándar */
+  border: 1px solid transparent; /* No tiene borde */
+  color: white;
+  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Al pasar el mouse sobre el botón (hover) */
+.product-card .card-body .btn-sm:hover {
+  transform: scale(1.1); /* Hace que el botón crezca un poco */
+  background-color: #45a049; /* Un verde más oscuro cuando el mouse pasa */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra al pasar el mouse */
+}
+
+/* Animación de click: efecto de presionado */
+.product-card .card-body .btn-sm:active {
+  transform: scale(0.95); /* Hace que el botón se "hunda" al hacer clic */
+  box-shadow: none; /* Elimina la sombra al hacer clic */
+}
