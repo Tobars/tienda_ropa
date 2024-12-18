@@ -2,17 +2,27 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from './shared/models/product.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',  // Asegúrate de que esté aquí
 })
 export class DatosService {
 
-  url = 'https://t ienda-online-12ba6-default-rtdb.firebaseio.com/';
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private router: Router) {}
 
-  listarProductos(): Observable<{[ llave: string]: Product }> {
-    return this.httpClient.get<{ [llave: string]: Product }>(this.url + 'datos.json');
+
+
+  logout(){
+
+    localStorage.removeItem('user');
+    localStorage.removeItem('authToken');
+
+
+
   }
+
+
+
 }

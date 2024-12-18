@@ -1,0 +1,42 @@
+/* Estilo adicional para el contenedor del producto */
+.product-details {
+  background-color: var(--color-bg-light); /* Fondo blanco */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mejorar la visualización de los botones */
+.product-details .btn {
+  width: 100%; /* Botones ocupan todo el ancho disponible */
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+.product-details .btn-primary {
+  background-color: var(--color-info); /* Cian */
+  border-color: var(--color-info);
+}
+
+.product-details .btn-primary:hover {
+  background-color: var(--color-primary);
+}
+
+.product-details .btn-success {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.product-details .btn-success:hover {
+  background-color: var(--color-primary);
+}
+
+.product-details .btn-secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.product-details .btn-secondary:hover {
+  background-color: var(--color-primary);
+}

@@ -1,8 +1,8 @@
 /* CSS para la página Contáctenos */
 body {
   font-family: Arial, sans-serif;
-  background-color: #ffffff; /* Fondo blanco */
-  color: #000000; /* Texto en negro */
+  background-color: var(--color-bg-light); /* Fondo blanco usando la variable */
+  color: var(--color-text-primary); /* Texto en negro usando la variable */
   margin: 0;
   padding: 0;
 }
@@ -14,12 +14,12 @@ body {
 h1.display-4 {
   font-size: 4.5rem; /* Tamaño grande para el título */
   font-weight: bold;
-  color: #333; /* Gris oscuro para el título */
+  color: var(--color-text-muted); /* Gris oscuro para el título usando la variable */
 }
 
 p.lead {
   font-size: 1.25rem;
-  color: #6c757d; /* Gris claro para el texto de la descripción */
+  color: var(--color-text-muted); /* Gris claro para el texto de la descripción usando la variable */
   margin-top: 10px;
 }
 
@@ -31,12 +31,12 @@ form {
 
 .form-label {
   font-size: 1rem;
-  color: #333; /* Color gris oscuro para las etiquetas */
+  color: var(--color-text-muted); /* Color gris oscuro para las etiquetas usando la variable */
 }
 
 .form-control {
-  background-color: #f8f9fa; /* Fondo gris claro para los campos de entrada */
-  border: 1px solid #dee2e6; /* Borde gris claro */
+  background-color: var(--color-bg-light); /* Fondo gris claro para los campos de entrada usando la variable */
+  border: 1px solid var(--color-border); /* Borde gris claro usando la variable */
   padding: 12px;
   font-size: 1rem;
   border-radius: 5px;
@@ -44,13 +44,13 @@ form {
 }
 
 .form-control:focus {
-  border-color: #000000; /* Borde negro al enfocar el campo */
+  border-color: var(--color-text-primary); /* Borde negro al enfocar el campo usando la variable */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
 button[type="submit"] {
-  background-color: #000000; /* Botón negro */
-  color: #ffffff; /* Texto blanco */
+  background-color: var(--color-primary); /* Botón negro usando la variable */
+  color: var(--color-text-light); /* Texto blanco usando la variable */
   font-size: 1.2rem;
   padding: 12px 30px;
   border-radius: 25px;
@@ -62,7 +62,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #343a40; /* Gris oscuro cuando pasa el ratón */
+  background-color: var(--color-secondary); /* Gris oscuro cuando pasa el ratón usando la variable */
   transform: translateY(-3px); /* Efecto de elevación */
 }
 

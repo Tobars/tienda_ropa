@@ -1,27 +1,29 @@
-
+<!-- Contenedor para los toasts -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3"></div>
 
 <div class="container mt-5">
   <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
     <!-- Recorrer los productos -->
     <div class="col" *ngFor="let product of products">
-      <!-- Hacer que la tarjeta sea un enlace -->
-      <a [routerLink]="['/product', product.id]" class="card h-100 text-decoration-none product-card">
-        <!-- Imagen con tamaño fijo -->
-        <img [src]="product.image" class="card-img-top img-fluid fixed-img" alt="{{ product.title }}">
+      <!-- Tarjeta del producto sin redirección -->
+      <div class="card h-100 text-decoration-none product-card">
+        <!-- Envolvemos la imagen con un enlace para redirigir al detalle del producto -->
+        <a [routerLink]="['/product', product.id]">
+          <img [src]="product.image" class="card-img-top img-fluid fixed-img" alt="{{ product.title }}">
+        </a>
 
         <div class="card-body d-flex flex-column">
-          <h5 class="card-title">{{ product.title }}</h5>
+          <!-- Título del producto -->
+          <h5 class="card-title product-title">{{ product.title }}</h5>
 
           <!-- Contenedor para el precio y el botón -->
-          <div class="d-flex justify-content-between align-items-center">
-            <p class="card-text fw-bold mb-0">${{ product.price }}</p>
+          <div class="d-flex justify-content-between align-items-center mt-auto">
+            <p class="card-text fw-bold mb-0 product-price">${{ product.price }}</p>
             <!-- Botón para agregar al carrito -->
-            <button class="btn btn-success btn-sm" (click)="agregarAlCarrito(product)">Agregar</button>
+            <button (click)="agregarAlCarrito(product); mostrarToast(product.title + ' agregado con éxito!')" class="btn btn-success btn-sm">Agregar</button>
           </div>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </div>
-
-

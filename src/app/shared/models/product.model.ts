@@ -18,3 +18,6 @@ export interface Carritos {
   date: string;     // Fecha del carrito
   products: CarritoProduct[];  // Lista de productos en el carrito (con solo productId y quantity)
 }
+
+
+

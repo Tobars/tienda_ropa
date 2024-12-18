@@ -2,46 +2,63 @@
 .card-img-top {
   object-fit: cover; /* Esto asegura que las imágenes cubran el área sin distorsionarse */
   height: 200px; /* Ajusta la altura de las imágenes según tu preferencia */
+  border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+  transition: transform 0.3s ease; /* Transición suave en la imagen */
 }
 
+/* Efecto hover para las imágenes */
+.card-img-top:hover {
+  transform: scale(1.05); /* Aumenta la imagen un poco al pasar el mouse */
+}
+
+/* Estilo para el cuerpo de la tarjeta */
 .card-body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Esto asegura que el contenido se distribuya de manera uniforme */
+  justify-content: space-between;
   height: 100%; /* Hace que el cuerpo de la tarjeta ocupe toda la altura */
+  padding: 15px;
+  transition: background-color 0.3s ease; /* Cambio suave del fondo */
+  background-color: var(--color-bg-light); /* Color de fondo por defecto */
+  border-radius: 0 0 8px 8px; /* Bordes redondeados en la parte inferior */
 }
 
+/* Efecto hover en el cuerpo de la tarjeta */
+.product-card:hover .card-body {
+  background-color: var(--color-bg-hover); /* Fondo cuando el mouse pasa por encima */
+}
+
+/* Estilo para el título del producto */
 .card-title {
   font-size: 1.2rem;
+  font-weight: 600; /* Mayor grosor para destacar el título */
+  color: var(--color-text-dark); /* Color oscuro para el título */
+  transition: color 0.3s ease; /* Cambio de color suave */
 }
 
+/* Cambiar el color del título al pasar el mouse */
+.product-card:hover .card-title {
+  color: var(--color-primary); /* Cambia el color del título al pasar el mouse */
+}
+
+/* Estilo para el precio del producto */
 .card-text {
   font-weight: bold;
   font-size: 1.1rem;
+  color: var(--color-price); /* Color personalizado para el precio */
 }
 
 /* Estilo para la tarjeta con hover */
 .product-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px; /* Bordes redondeados en la tarjeta */
+  overflow: hidden; /* Asegura que el contenido no se desborde */
 }
 
+/* Efecto hover para la tarjeta */
 .product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Más sombra */
-}
-
-/* Hacer que la imagen tenga un tamaño fijo */
-.fixed-img {
-  height: 200px; /* Ajusta la altura de la imagen */
-  object-fit: cover; /* Asegura que la imagen cubra todo el área de la tarjeta sin deformarse */
-}
-
-/* Asegurar que el card-body tenga una altura mínima para que no se mueva el texto */
-.product-card .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 200px; /* Ajusta esto para asegurarte que el contenido se ajuste bien */
+  transform: translateY(-10px); /* Eleva la tarjeta al pasar el mouse */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
 }
 
 /* Estilo para el contenedor que tiene el precio y el botón */
@@ -53,21 +70,75 @@
 /* Ajuste en el tamaño del botón */
 .product-card .card-body .btn-sm {
   font-size: 0.875rem; /* Tamaño pequeño para el botón */
-  background-color: #4CAF50; /* Verde estándar */
+  background-color: var(--color-primary); /* Verde estándar */
   border: 1px solid transparent; /* No tiene borde */
   color: white;
+  padding: 8px 15px;
   transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px; /* Bordes redondeados */
 }
 
-/* Al pasar el mouse sobre el botón (hover) */
-.product-card .card-body .btn-sm:hover {
-  transform: scale(1.1); /* Hace que el botón crezca un poco */
-  background-color: #45a049; /* Un verde más oscuro cuando el mouse pasa */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra al pasar el mouse */
+
+
+
+
+/* Animación de aparición suave para el producto */
+.product-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease-out forwards;
 }
 
-/* Animación de click: efecto de presionado */
-.product-card .card-body .btn-sm:active {
-  transform: scale(0.95); /* Hace que el botón se "hunda" al hacer clic */
-  box-shadow: none; /* Elimina la sombra al hacer clic */
+/* Animación de fadeInUp para la tarjeta del producto */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilo para el contenedor de los toasts */
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1050; /* Asegura que los toasts estén encima del contenido */
+}
+
+/* Estilo para los toasts */
+.toast {
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInToast 0.5s ease-out forwards;
+}
+
+/* Animación para los toasts */
+@keyframes fadeInToast {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación para eliminar el toast después de cierto tiempo */
+@keyframes fadeOutToast {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Estilo para el texto del toast */
+.toast-body {
+  font-size: 1rem;
 }

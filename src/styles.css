@@ -3,10 +3,10 @@
   /* Colores primarios */
   --color-primary: #000000;  /* Negro */
   --color-secondary: #6c757d;  /* Gris */
-  --color-success: #28a745;  /* Verde (puedes quitarlo si solo quieres grises) */
-  --color-danger: #dc3545;  /* Rojo (puedes quitarlo si solo quieres grises) */
-  --color-warning: #ffc107;  /* Amarillo (puedes quitarlo si solo quieres grises) */
-  --color-info: #17a2b8;  /* Cian (puedes quitarlo si solo quieres grises) */
+  --color-success: #28a745;  /* Verde */
+  --color-danger: #dc3545;  /* Rojo */
+  --color-warning: #ffc107;  /* Amarillo */
+  --color-info: #17a2b8;  /* Cian */
 
   /* Colores de fondo */
   --color-bg-light: #ffffff;  /* Blanco */
@@ -15,7 +15,7 @@
   /* Colores de texto */
   --color-text-primary: #000000;  /* Texto negro */
   --color-text-muted: #6c757d;  /* Gris para texto secundario */
-  --color-text-light: #ffffff;  /* Texto blanco (para contrastar en fondos oscuros) */
+  --color-text-light: #ffffff;  /* Texto blanco */
 
   /* Colores de borde */
   --color-border: #dee2e6;  /* Gris claro */
@@ -108,21 +108,129 @@ button:hover {
 
 /* Variaciones de colores para estados */
 .alert-success {
-  background-color: var(--color-secondary);  /* Gris como alerta de éxito */
+  background-color: var(--color-success);  /* Verde como alerta de éxito */
   color: var(--color-text-light);  /* Texto blanco */
 }
 
 .alert-danger {
-  background-color: var(--color-secondary);  /* Gris como alerta de peligro */
+  background-color: var(--color-danger);  /* Rojo como alerta de peligro */
   color: var(--color-text-light);  /* Texto blanco */
 }
 
 .alert-warning {
-  background-color: var(--color-secondary);  /* Gris como alerta de advertencia */
+  background-color: var(--color-warning);  /* Amarillo como alerta de advertencia */
   color: var(--color-text-light);  /* Texto blanco */
 }
 
 .alert-info {
-  background-color: var(--color-secondary);  /* Gris como alerta informativa */
+  background-color: var(--color-info);  /* Cian como alerta informativa */
   color: var(--color-text-light);  /* Texto blanco */
+}
+
+/* Efecto hover para las imágenes */
+.card-img-top {
+  object-fit: cover; /* Esto asegura que las imágenes cubran el área sin distorsionarse */
+  height: 200px; /* Ajusta la altura de las imágenes según tu preferencia */
+  border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+  transition: transform 0.3s ease; /* Transición suave en la imagen */
+}
+
+/* Efecto hover para las imágenes */
+.card-img-top:hover {
+  transform: scale(1.05); /* Aumenta la imagen un poco al pasar el mouse */
+}
+
+/* Estilo para el cuerpo de la tarjeta */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Hace que el cuerpo de la tarjeta ocupe toda la altura */
+  padding: 15px;
+  transition: background-color 0.3s ease; /* Cambio suave del fondo */
+  background-color: var(--color-bg-light); /* Fondo blanco */
+  border-radius: 0 0 8px 8px; /* Bordes redondeados en la parte inferior */
+}
+
+/* Efecto hover en el cuerpo de la tarjeta */
+.product-card:hover .card-body {
+  background-color: var(--color-bg-dark); /* Fondo oscuro cuando el mouse pasa por encima */
+}
+
+/* Estilo para el título del producto */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600; /* Mayor grosor para destacar el título */
+  color: var(--color-text-primary); /* Color de texto del título */
+  transition: color 0.3s ease; /* Cambio de color suave */
+}
+
+/* Cambiar el color del título al pasar el mouse */
+.product-card:hover .card-title {
+  color: var(--color-success); /* Cambia el color del título al pasar el mouse */
+}
+
+/* Estilo para el precio del producto */
+.card-text {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--color-text-primary); /* Color del texto del precio */
+}
+
+/* Estilo para la tarjeta con hover */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px; /* Bordes redondeados en la tarjeta */
+  overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
+/* Efecto hover para la tarjeta */
+.product-card:hover {
+  transform: translateY(-10px); /* Eleva la tarjeta al pasar el mouse */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+}
+
+/* Estilo para el contenedor que tiene el precio y el botón */
+.product-card .card-body .d-flex {
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Ajuste en el tamaño del botón */
+.product-card .card-body .btn-sm {
+  font-size: 0.875rem; /* Tamaño pequeño para el botón */
+  background-color: var(--color-success); /* Verde estándar */
+  border: 1px solid transparent; /* No tiene borde */
+  color: white;
+  padding: 8px 15px;
+  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Efecto hover en el botón */
+.product-card .card-body .btn-sm:hover {
+  transform: scale(1.1); /* Hace que el botón crezca un poco */
+  background-color: var(--color-danger); /* Rojo más oscuro cuando el mouse pasa */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra al pasar el mouse */
+}
+
+/* Animación de click: efecto de presionado */
+.product-card .card-body .btn-sm:active {
+  transform: scale(0.95); /* Hace que el botón se "hunda" al hacer clic */
+  box-shadow: none; /* Elimina la sombra al hacer clic */
+}
+
+/* Animación de aparición suave para el producto */
+.product-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards; /* Animación de aparición suave */
+}
+
+/* Keyframes para la animación de aparición */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

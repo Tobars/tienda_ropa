@@ -21,34 +21,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/home']">Home</a>
+            <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/home']">Inicio</a>
+
+          </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="#" [routerLink]="['/cart']">Carrito</a>
+
+
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/about-us']">Acerca de nosotros</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Shop</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" [routerLink]="['/about-us']">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" [routerLink]="['/contact-us']">Contact</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
-              href="#"
-              role="button"
-              aria-expanded="false"
-            >
-              More
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Option 1</a></li>
-              <li><a class="dropdown-item" href="#">Option 2</a></li>
-              <li><a class="dropdown-item" href="#">Log out</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
+            <a class="nav-link" href="#" [routerLink]="['/contact-us']">Contactanos</a>
           </li>
         </ul>
       </div>
@@ -70,9 +55,9 @@
           </a>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <!-- Cambiar el routerLink dinámicamente usando el userId -->
-            <li><a class="dropdown-item" href="#" [routerLink]="['/user-profile', userId]">User Profile</a></li>
-            <li><a class="dropdown-item" href="#">Option 1</a></li>
-            <li><a class="dropdown-item" href="#" [routerLink]="['/login']">Log out</a></li>
+            <li><a class="dropdown-item" href="#" [routerLink]="['/user-profile', userId]"> Mi perfil</a></li>
+            <li><a class="dropdown-item" href="#"> Opciones</a></li>
+            <li><a class="dropdown-item" href="#" (click)="[logout()]" > Cerrar Session</a></li>
           </ul>
         </li>
       </ul>

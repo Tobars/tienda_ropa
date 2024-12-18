@@ -1,8 +1,8 @@
 /* CSS para la página About Us */
 body {
   font-family: Arial, sans-serif;
-  background-color: #ffffff; /* Fondo blanco */
-  color: #000000; /* Texto en negro */
+  background-color: var(--color-bg-light); /* Fondo blanco usando la variable */
+  color: var(--color-text-primary); /* Texto en negro usando la variable */
   margin: 0;
   padding: 0;
 }
@@ -14,18 +14,18 @@ body {
 h1.display-4 {
   font-size: 4.5rem; /* Tamaño grande para el título */
   font-weight: bold;
-  color: #333; /* Gris oscuro para el título */
+  color: var(--color-text-muted); /* Gris oscuro para el título usando la variable */
 }
 
 p.lead {
   font-size: 1.25rem;
-  color: #6c757d; /* Gris claro para el texto de la descripción */
+  color: var(--color-text-muted); /* Gris claro para el texto de la descripción usando la variable */
   margin-top: 10px;
 }
 
 a.btn {
-  background-color: #000000; /* Botón negro */
-  color: #ffffff; /* Texto blanco */
+  background-color: var(--color-primary); /* Botón negro usando la variable */
+  color: var(--color-text-light); /* Texto blanco usando la variable */
   font-size: 1.2rem;
   padding: 12px 30px;
   border-radius: 25px;
@@ -36,7 +36,7 @@ a.btn {
 }
 
 a.btn:hover {
-  background-color: #343a40; /* Gris oscuro cuando pasa el ratón */
+  background-color: var(--color-secondary); /* Gris oscuro cuando pasa el ratón usando la variable */
   transform: translateY(-3px); /* Efecto de elevación */
 }
 

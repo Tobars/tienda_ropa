@@ -3,6 +3,7 @@ import { Product } from './shared/models/product.model';
 import { DatosService } from './datos.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,8 @@ export class ProductoService {
   apiUrl: string = 'https://fakestoreapi.com/products';
   constructor(
     private datosService: DatosService,
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private location : Location,
   ) {}
 
   listarProductos() {
@@ -36,48 +38,25 @@ export class ProductoService {
   getProductById(id: number): Observable<Product> {
     return this.httpClient.get<Product>(`${this.apiUrl}/${id}`);
   }
+
+  mostrarToast(mensaje: string): void {
+    const toast = document.createElement('div');
+    toast.className = 'toast show';
+    toast.innerText = mensaje;
+
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+      toast.remove();
+    }, 3000);
+  }
+
+  goBack(): void {
+    this.location.back();  // Navegar a la página anterior
+  }
+
+
 }
 
 
 
-/*
-import { Injectable } from '@angular/core';
-import { Product } from './shared/models/product.model';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-
-@Injectable({
-  providedIn: 'root',
-})
-export class ProductoService {
-   Usamos un array para almacenar los productos
-  products: Product[] = [];
-
-  // La URL de la API
-  apiUrl: string = 'https://fakestoreapi.com/products';
-
-  constructor(private httpClient: HttpClient) {}
-
-  // Método para obtener los productos
-  listarProductos(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.apiUrl);
-  }
-
-  // Método para cargar los productos directamente en el componente (si prefieres usarlo sin Observable)
-  cargarProductos(): void {
-    this.httpClient.get<Product[]>(this.apiUrl).subscribe({
-      next: (response) => {
-        // Asignamos la respuesta a la propiedad products
-        this.products = response;
-        console.log(this.products); // Para depurar
-      },
-      error: (err) => {
-        console.error('Error al obtener productos', err);
-      },
-    });
-  }
-}
-
-
-
-*/

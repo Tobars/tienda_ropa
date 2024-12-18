@@ -1,22 +1,47 @@
-<app-nav-bar>  </app-nav-bar>
+<!-- Contenedor para los toasts -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <!-- Los toasts se añadirán aquí dinámicamente -->
+</div>
 
+<!-- Componente del NavBar -->
+<app-nav-bar></app-nav-bar>
+
+<!-- Contenido principal del producto -->
 <div class="container mt-5">
   <div *ngIf="product" class="product-details">
     <div class="row">
       <div class="col-md-6">
-        <img [src]="product.image" class="img-fluid" alt="{{ product.title }}">
+        <img [src]="product.image" class="img-fluid rounded shadow" alt="{{ product.title }}">
       </div>
       <div class="col-md-6">
-        <h2>{{ product.title }}</h2>
-        <p><strong>Price:</strong> ${{ product.price }}</p>
+        <h2 class="mb-3">{{ product.title }}</h2>
+        <p class="lead"><strong>Price:</strong> ${{ product.price }}</p>
         <p><strong>Category:</strong> {{ product.category }}</p>
         <p><strong>Description:</strong> {{ product.description }}</p>
-        <button class="btn btn-success">Add to Cart</button>
+
+        <!-- Botón para agregar al carrito -->
+        <button (click)="agregarAlCarrito(product)" class="btn btn-primary btn-lg mt-3">
+          Agregar al carrito
+        </button>
+
+        <!-- Botón para ir al carrito -->
+        <a [routerLink]="['/cart']" class="btn btn-primary btn-lg mt-3 ml-2">
+          Ir al carrito
+        </a>
+
+        <!-- Botón para volver atrás -->
+        <button (click)="goBack()" class="btn btn-secondary btn-lg mt-3 ml-2">
+          Volver atrás
+        </button>
       </div>
     </div>
   </div>
+
+  <!-- Mensaje mientras se carga el producto -->
   <div *ngIf="!product" class="text-center">
-    <p>Loading product details...</p>
+    <p class="text-muted">Cargando detalles del producto...</p>
   </div>
 </div>
+
+<!-- Componente del Footer -->
 <app-footer></app-footer>

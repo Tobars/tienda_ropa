@@ -1,10 +1,27 @@
-/* Footer background color and padding */
+/* Estilos generales para que el footer quede al final */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor principal que ocupará el espacio disponible */
+.main-content {
+  flex-grow: 1; /* Expande este contenedor para ocupar el espacio restante */
+}
+
+/* Footer: permanece al fondo */
 .footer {
   background-color: #343a40; /* Dark background color */
   color: #fff;
   padding: 2rem 0;
+  width: 100%;
+  position: relative; /* Cambia de absolute a relative */
+  margin-top: auto; /* Empuja el footer hacia el final */
 }
 
+/* Enlaces en el footer */
 .footer a {
   color: #fff;
   text-decoration: none;
@@ -15,6 +32,7 @@
   color: #f8f9fa; /* Lighter color on hover */
 }
 
+/* Iconos sociales */
 .footer .social-icons i {
   font-size: 1.5rem; /* Larger social icons */
 }
@@ -27,6 +45,7 @@
   text-decoration: underline; /* Add underline on hover for better UX */
 }
 
+/* Títulos en el footer */
 .footer h5 {
   font-size: 1.25rem;
   font-weight: bold;
@@ -44,7 +63,15 @@
   font-size: 1rem;
 }
 
+/* Copyright en el footer */
 .footer .text-center p {
   font-size: 0.9rem;
   margin-top: 1rem;
+}
+
+/* Asegura que el footer quede al final también en pantallas pequeñas */
+@media (max-width: 767px) {
+  .footer {
+    margin-top: auto; /* Sigue empujando hacia abajo en pantallas pequeñas */
+  }
 }
